@@ -1,0 +1,30 @@
+WEBSITE TUMBUDDY_ID
+====================
+
+YANG PERLU DIGANTI (semuanya di file data.js)
+- whatsapp     : nomor WA format 62..., contoh "6281234567890"
+- instagram    : username IG tanpa @ (sekarang diisi "tumbuddy_id", pastikan benar)
+- FEATURED     : teks bagian "Pilihan kami" (produk unggulan)
+- ABOUT.quote  : kalimat besar yang menyala per kata (kata di antara *bintang* jadi miring merah)
+- price        : harga tiap produk (angka, contoh 45000). Kalau null tampil "Tanya harga"
+- DETAILS      : panjang tali dan ukuran tumbler (teks dalam [kurung siku])
+- ABOUT        : cerita, visi, misi (masih draf, sesuaikan dengan cerita asli)
+- REVIEWS      : testimoni ASLI pembeli (format contohnya ada di file)
+- CUSTOMER_PHOTOS : foto dari pelanggan (simpan fotonya di )
+- SHIPPING     : kota asal, ekspedisi, waktu proses
+Teks dalam [kurung siku] tampil berwarna merah muda di website sebagai penanda
+bagian yang belum diisi. Setelah diganti, tandanya hilang sendiri.
+
+MENGGANTI FOTO PRODUK
+Ganti file foto dengan nama yang sama, atau tambahkan foto baru dan
+tulis namanya di bagian PRODUCTS pada data.js.
+
+CEK DI LAPTOP
+Cukup klik dua kali index.html.
+
+UPLOAD KE VERCEL
+1. Buat repository baru di GitHub (pilih Private).
+2. Add file > Upload files, blok SEMUA file di folder ini (Ctrl+A) lalu seret ke GitHub.
+3. Buka vercel.com, login dengan GitHub, Add New > Project, pilih repository tadi.
+4. Framework Preset: Other, lalu klik Deploy.
+5. Bagikan alamat utama: namaproject.vercel.app
