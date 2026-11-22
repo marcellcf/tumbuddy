@@ -177,6 +177,7 @@ function tujuanKlik(slug) {
   const wa = (m) => `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(m)}`;
   if (slug === "instagram") return `https://instagram.com/${SITE.instagram}`;
   if (slug === "pesan-duo") return wa(FEATURED.waMessage);
+  if (slug === "custom") return wa("Halo Tumbuddy_ID, aku mau request strap custom. Warna tali dan charm yang aku mau: ");
   if (slug === "ulasan") return wa("Halo Tumbuddy_ID, aku mau kasih ulasan untuk strap yang aku beli.");
   if (slug.indexOf("pesan-") === 0) {
     const p = PRODUCTS.find((x) => x.id === slug.slice(6));

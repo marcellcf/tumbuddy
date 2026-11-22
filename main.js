@@ -31,6 +31,16 @@
   let current = "all";
   filters.innerHTML = FILTERS.map((f) =>
     `<button class="chip${f.id === "all" ? " chip--on" : ""}" role="tab" aria-selected="${f.id === "all"}" data-f="${f.id}">${esc(f.label)}</button>`).join("");
+  function fitCta() {
+    const cta = grid.querySelector(".cta-card"); if (!cta) return;
+    const cols = getComputedStyle(grid).gridTemplateColumns.split(" ").length;
+    const n = grid.querySelectorAll(".card").length;
+    const rem = (cols - (n % cols)) % cols;
+    cta.style.gridColumn = rem ? `span ${rem}` : "1 / -1";
+    cta.classList.toggle("cta-card--wide", !rem || rem >= 3);
+    cta.classList.toggle("cta-card--one", rem === 1);
+  }
+  window.addEventListener("resize", fitCta);
   function renderGrid() {
     const list = PRODUCTS.filter((p) => current === "all" || p.type === current);
     grid.innerHTML = list.map((p, i) => `
@@ -42,7 +52,21 @@
           <div class="card__foot"><span class="price">${rupiah(p.price)}</span><span class="card__more">Detail →</span></div>
         </div>
       </article>`).join("");
-    grid.querySelectorAll(".card").forEach((c) => requestAnimationFrame(() => c.classList.add("card--in")));
+    grid.insertAdjacentHTML("beforeend", `
+      <aside class="cta-card" style="--i:${list.length}">
+        <svg class="cta-card__star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 6l12.6 29.4L94 38l-23.6 21.6L77.2 92 50 75.4 22.8 92l6.8-32.4L6 38l31.4-2.6z"/></svg>
+        <div class="cta-card__photos" aria-hidden="true">
+          <img src="sky-lemon.jpg" alt=""><img src="cotton-pop.jpg" alt=""><img src="black-rose.jpg" alt="">
+        </div>
+        <div class="cta-card__text">
+          <p class="eyebrow eyebrow--light">Custom order</p>
+          <h3>Belum nemu yang <em>pas?</em></h3>
+          <p>Pilih sendiri warna tali dan charm-nya, nanti kami anyamkan khusus buat kamu.</p>
+          <a class="btn btn--cream btn--small" href="${linkKlik("custom")}" target="_blank" rel="noopener">Request custom</a>
+        </div>
+      </aside>`);
+    fitCta();
+    grid.querySelectorAll(".card, .cta-card").forEach((c) => requestAnimationFrame(() => c.classList.add("card--in")));
     bindTilt();
   }
   filters.addEventListener("click", (e) => {
