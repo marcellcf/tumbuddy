@@ -541,8 +541,7 @@ body.ready:not(.intro-on) .hero__title .w > span { transform: none; transition-d
 .about > .vm ol li { font-size: 15px; }
 @media (max-width: 640px) { .about > .vm .vm__card:first-child p { font-size: 17px; } }
 
-/* revisi: hujan di belakang model 3D */
-.viewer__stage { background: linear-gradient(180deg, #F3E1E3 0%, #FBF4EA 100%); }
-.viewer__stage .rain { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-.viewer__stage #strap3d { position: relative; z-index: 1; }
-.viewer__hint { z-index: 2; }
+/* revisi: hujan pernak-pernik di latar bagian Product Details */
+#details { position: relative; overflow: hidden; }
+#details > .confetti { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+#details > .container { position: relative; z-index: 1; }
