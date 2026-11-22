@@ -408,3 +408,30 @@ body.ready:not(.intro-on) .hero__title .w > span { transform: none; transition-d
 .ugc__empty figcaption { font-size: 13px; }
 .reviews > .reviews__note { grid-column: 1 / -1; margin: -8px 0 0; font-size: 12.5px; color: rgba(251,244,234,.6); text-align: right; }
 @media (max-width: 900px) { .reviews > .reviews__note { text-align: left; } }
+
+/* revisi: About lebih padat */
+.about { align-items: start; row-gap: 64px; }
+.about__photo { position: sticky; top: 110px; }
+.about__collage { position: relative; padding-bottom: 120px; }
+.about__collage .photo-frame--arch { width: 88%; }
+.photo-frame--tilt { position: absolute; right: 0; bottom: 0; width: 52%; aspect-ratio: 4 / 5; border-radius: 22px; rotate: 5deg; box-shadow: var(--shadow); }
+.photo-frame--tilt img { border-radius: 14px; }
+.about__badge { position: absolute; left: -14px; bottom: 70px; width: 118px; height: 118px; border-radius: 50%; background: var(--cherry); color: #fff; display: grid; place-items: center; box-shadow: 0 16px 30px -14px rgba(91,14,30,.6); }
+.about__badge svg { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 16s linear infinite; }
+.about__badge text { fill: #fff; font: 700 10.5px var(--sans); letter-spacing: .18em; }
+.about__badge span { font-size: 24px; }
+.about > .vm { grid-column: 1 / -1; grid-template-columns: 1fr 1.6fr; gap: 20px; }
+.about > .vm .vm__card { padding: 30px 34px; }
+.about > .vm .vm__card h3 { font-size: 24px; margin-bottom: 12px; }
+.about > .vm .vm__card p, .about > .vm .vm__card li { font-size: 16px; }
+.about > .vm ol { grid-template-columns: 1fr 1fr; column-gap: 34px; row-gap: 10px; }
+@media (max-width: 900px) {
+  .about__photo { position: relative; top: 0; }
+  .about > .vm { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .about__collage { padding-bottom: 80px; }
+  .about__badge { width: 92px; height: 92px; left: -6px; bottom: 40px; }
+  .about__badge text { font-size: 9px; }
+  .about > .vm ol { grid-template-columns: 1fr; }
+}
