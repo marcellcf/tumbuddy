@@ -9,42 +9,46 @@ const SITE = {
   whatsapp: "6282123095188",
   // Username Instagram tanpa @
   instagram: "tumbuddy_id",
+  // Link YouTube dan TikTok
+  youtube: "https://youtube.com/@tumbuddy_id",
+  tiktok: "https://www.tiktok.com/@tumbuddy_id",
   // Pesan awal saat pembeli klik tombol WhatsApp
   waGreeting: "Halo Tumbuddy_ID, aku mau tanya-tanya soal strap tumbler.",
 };
 
 // ---------------- OUR PRODUCTS ----------------
 // price: isi angka (contoh 45000). Kalau dibiarkan null, tampil "Tanya harga".
+// name: nama kelompok yang tampil di kartu. variant: keterangan warna, ikut masuk ke pesan WhatsApp.
 // type: candy / pookie / sleek / charm (dipakai untuk tombol filter)
 // colors: warna yang tampil sebagai titik di kartu produk
 const PRODUCTS = [
-  { id: "sky-lemon",     name: "Sky Lemon",     type: "candy", price: null, img: "sky-lemon.jpg",
+  { id: "sky-lemon",     name: "Candy Braid", variant: "tali biru-kuning, ring biru", type: "candy", price: null, img: "sky-lemon.jpg",
     colors: ["#6FB6E8", "#F3D33F"], ring: "Biru",  desc: "Anyaman spiral biru dan kuning dengan tali katun kuning dan charm karakter." },
-  { id: "pink-noir",     name: "Pink Noir",     type: "candy", price: null, img: "pink-noir.jpg",
+  { id: "pink-noir",     name: "Candy Braid", variant: "tali pink-hitam, ring hitam", type: "candy", price: null, img: "pink-noir.jpg",
     colors: ["#F2A7BE", "#262326"], ring: "Hitam", desc: "Spiral pink dan hitam, kalem tapi tetap manis." },
-  { id: "cotton-pop",    name: "Cotton Pop",    type: "pookie", price: null, img: "cotton-pop.jpg",
+  { id: "cotton-pop",    name: "Pookie Loop", variant: "tali pink-biru, ring pink", type: "pookie", price: null, img: "cotton-pop.jpg",
     colors: ["#F4AFC4", "#7EB8E5", "#F3D33F"], ring: "Pink", desc: "Anyaman pink dan biru dengan aksen kuning dan ring silikon pink." },
-  { id: "sunny-sky",     name: "Sunny Sky",     type: "pookie", price: null, img: "sunny-sky.jpg",
+  { id: "sunny-sky",     name: "Pookie Loop", variant: "tali kuning-biru, ring biru", type: "pookie", price: null, img: "sunny-sky.jpg",
     colors: ["#F3D33F", "#6FB6E8"], ring: "Biru",  desc: "Kuning cerah dan biru langit, cocok untuk tumbler warna netral." },
-  { id: "storm-blue",    name: "Storm Blue",    type: "pookie", price: null, img: "storm-blue.jpg",
+  { id: "storm-blue",    name: "Pookie Loop", variant: "tali abu-biru, ring biru", type: "pookie", price: null, img: "storm-blue.jpg",
     colors: ["#3D3F45", "#7EB8E5"], ring: "Biru",  desc: "Simpul abu tua dengan tali biru dan aksen tali abu." },
-  { id: "candy-lemon",   name: "Candy Lemon",   type: "pookie", price: null, img: "candy-lemon.jpg",
+  { id: "candy-lemon",   name: "Pookie Loop", variant: "tali pink-biru-kuning, ring biru", type: "pookie", price: null, img: "candy-lemon.jpg",
     colors: ["#F4AFC4", "#7EB8E5", "#F3D33F"], ring: "Biru", desc: "Anyaman pink-biru dengan tali kuning dan charm bintang pink." },
-  { id: "sky-shadow",    name: "Sky Shadow",    type: "pookie", price: null, img: "sky-shadow.jpg",
+  { id: "sky-shadow",    name: "Pookie Loop", variant: "tali biru-hitam, ring biru", type: "pookie", price: null, img: "sky-shadow.jpg",
     colors: ["#7EB8E5", "#2B2D31"], ring: "Biru",  desc: "Tali biru dengan simpul hitam dan charm bintang pink." },
-  { id: "midnight-puff", name: "Midnight Puff", type: "pookie", price: null, img: "midnight-puff.jpg",
+  { id: "midnight-puff", name: "Pookie Loop", variant: "tali hitam-abu, ring hitam", type: "pookie", price: null, img: "midnight-puff.jpg",
     colors: ["#1F1F22", "#B9BDC4"], ring: "Hitam", desc: "Serba hitam dengan aksen tali abu dan charm karakter." },
-  { id: "black-lemon",   name: "Black Lemon",   type: "sleek", price: null, img: "black-lemon.jpg",
+  { id: "black-lemon",   name: "Sleek Rope", variant: "tali hitam-kuning, ring hitam", type: "sleek", price: null, img: "black-lemon.jpg",
     colors: ["#2B2D31", "#F3D33F"], ring: "Hitam", desc: "Tali hitam dengan aksen kuning dan charm bintang kuning." },
-  { id: "black-rose",    name: "Black Rose",    type: "sleek", price: null, img: "black-rose.jpg",
+  { id: "black-rose",    name: "Sleek Rope", variant: "tali hitam-pink, ring hitam", type: "sleek", price: null, img: "black-rose.jpg",
     colors: ["#1F1F22", "#F2A7BE"], ring: "Hitam", desc: "Perpaduan hitam dan pink dengan charm karakter lucu." },
-  { id: "charm-name",    name: "Name Bell Charm",  type: "charm", price: null, img: "charm-roy.jpg",
+  { id: "charm-name",    name: "Charm", variant: "lonceng dan huruf nama", type: "charm", price: null, img: "charm-roy.jpg",
     colors: ["#7EB8E5", "#F4AFC4", "#F3D33F"], ring: "-", desc: "Gantungan dengan lonceng, huruf nama sesuai request, dan figur mungil." },
-  { id: "charm-sandwich",name: "Sweet Bite Charm", type: "charm", price: null, img: "charm-sandwich.jpg",
+  { id: "charm-sandwich", name: "Charm", variant: "bentuk kue kotak", type: "charm", price: null, img: "charm-sandwich.jpg",
     colors: ["#F4AFC4", "#F3D33F"], ring: "-", desc: "Charm resin bentuk kue kotak dengan pengait pink atau kuning." },
-  { id: "charm-bear",    name: "Honey Bear Charm", type: "charm", price: null, img: "charm-bear.jpg",
+  { id: "charm-bear",    name: "Charm", variant: "beruang kuning", type: "charm", price: null, img: "charm-bear.jpg",
     colors: ["#F3D33F"], ring: "-", desc: "Charm beruang kuning dengan berbagai pose, pengait kuning." },
-  { id: "charm-bell",    name: "Jingle Charm",     type: "charm", price: null, img: "charm-bell.jpg",
+  { id: "charm-bell",    name: "Charm", variant: "lonceng pastel", type: "charm", price: null, img: "charm-bell.jpg",
     colors: ["#F4AFC4", "#F3D33F", "#7EB8E5"], ring: "-", desc: "Lonceng warna pastel dengan manik huruf dan charm hati." },
 ];
 
@@ -79,10 +83,10 @@ const DETAILS = {
 
 // Warna untuk model 3D (tombol warna di bagian Product Details)
 const SWATCHES = [
-  { name: "Sky Lemon", a: "#6FB6E8", b: "#F3D33F", ring: "#3B9EDB" },
-  { name: "Pink Noir", a: "#F2A7BE", b: "#2A2629", ring: "#1D1D20" },
-  { name: "Cotton Pop", a: "#F4AFC4", b: "#7EB8E5", ring: "#E98F9D" },
-  { name: "Storm Blue", a: "#3D3F45", b: "#8EC2EA", ring: "#3B9EDB" },
+  { name: "Biru Kuning", a: "#6FB6E8", b: "#F3D33F", ring: "#3B9EDB" },
+  { name: "Pink Hitam", a: "#F2A7BE", b: "#2A2629", ring: "#1D1D20" },
+  { name: "Pink Biru", a: "#F4AFC4", b: "#7EB8E5", ring: "#E98F9D" },
+  { name: "Abu Biru", a: "#3D3F45", b: "#8EC2EA", ring: "#3B9EDB" },
   { name: "Wine", a: "#7D1830", b: "#F3E3CF", ring: "#5B0E1E" },
 ];
 
@@ -105,10 +109,10 @@ const ABOUT = {
   title: "Berawal dari Hal Sederhana, *Hadir untuk Lebih Praktis*",
   // Teks di antara **dua bintang** tampil tebal.
   story: [
-    "Tumbuddy_ID hadir dari keinginan sederhana untuk membuat membawa tumbler menjadi lebih mudah dan menyenangkan. Berawal dari melihat bahwa tumbler sering kali merepotkan saat dibawa beraktivitas, muncul ide untuk menciptakan strap yang tidak hanya praktis, tetapi juga memiliki tampilan yang menarik.",
-    "Dari ide tersebut, Tumbuddy_ID mulai menghadirkan strap tumbler handmade berbahan tali paracord yang dianyam satu per satu dengan penuh perhatian. Dilengkapi ring silikon dan berbagai pilihan charm lucu, setiap produk dirancang untuk memberikan kenyamanan sekaligus sentuhan personal pada tumbler kesayanganmu.",
-    "Bagi Tumbuddy_ID, strap bukan hanya sekadar aksesori, tetapi juga cara sederhana untuk mengekspresikan gaya dalam aktivitas sehari-hari.",
-    "**Little Strap, Big Style!** Karena membawa tumbler bisa lebih praktis sekaligus tetap stylish.",
+    "Tumbuddy_ID hadir dari keinginan untuk membuat membawa tumbler lebih mudah dan menyenangkan. Melihat tumbler sering merepotkan saat dibawa beraktivitas, muncul ide untuk menciptakan strap yang praktis sekaligus stylish.",
+    "Setiap strap dibuat secara handmade dari tali paracord yang dianyam satu per satu, dilengkapi ring silikon dan charm lucu untuk memberikan sentuhan personal pada tumbler kesayanganmu.",
+    "Bagi Tumbuddy_ID, strap bukan hanya aksesori, tetapi juga pelengkap gaya dalam aktivitas sehari-hari.",
+    "**Little Strap, Big Style!**",
   ],
   vision: "Menjadi produk aksesori tumbler yang inovatif, fungsional, dan praktis dalam mendukung kebutuhan masyarakat modern, serta memberikan pengalaman membawa tumbler yang lebih mudah, nyaman, dan fleksibel dalam berbagai aktivitas sehari-hari.",
   mission: [
@@ -122,19 +126,19 @@ const ABOUT = {
 
 // ---------------- REVIEWS ----------------
 // Isi dengan testimoni ASLI dari pembeli. Contoh format:
-// { name: "Nama Pembeli", rating: 5, text: "Isi testimoni", product: "Sky Lemon" },
+// { name: "Nama Pembeli", rating: 5, text: "Isi testimoni", product: "Candy Braid" },
 const REVIEWS = [
-  { name: "Nadia R.",   rating: 5, product: "Sky Lemon",
+  { name: "Nadia R.",   rating: 5, product: "Candy Braid",
     text: "Anyamannya rapi banget dan warnanya cerah. Tumbler jadi gampang dibawa ke kampus, tinggal diselempangin." },
-  { name: "Dimas P.",   rating: 5, product: "Black Rose",
+  { name: "Dimas P.",   rating: 5, product: "Sleek Rope",
     text: "Talinya kuat, dipakai buat tumbler 1 liter juga aman. Desainnya simpel tapi tetap ada sentuhan lucunya." },
-  { name: "Salsa A.",   rating: 4, product: "Cotton Pop",
+  { name: "Salsa A.",   rating: 5, product: "Pookie Loop",
     text: "Lucu parah, warnanya pastel dan ring silikonnya pas di tumbler. Pengirimannya juga cepat." },
-  { name: "Kevin T.",   rating: 5, product: "Midnight Puff",
+  { name: "Kevin T.",   rating: 5, product: "Pookie Loop",
     text: "Suka sama warna hitamnya, cocok dipakai kerja. Ringnya nggak gampang melorot." },
-  { name: "Aurel M.",   rating: 5, product: "Honey Bear Charm",
+  { name: "Aurel M.",   rating: 5, product: "Charm",
     text: "Charm beruangnya gemes banget. Aku pasang di strap Pookie Loop, jadi makin standout." },
-  { name: "Fikri H.",   rating: 4, product: "Pink Noir",
+  { name: "Fikri H.",   rating: 4, product: "Candy Braid",
     text: "Beli buat kado pacar dan dia suka banget. Packaging pouch holografiknya juga cakep." },
 ];
 
@@ -147,7 +151,7 @@ const CUSTOMER_PHOTOS = [
   { img: "hero-pair.jpg",     caption: "Candy Braid" },
   { img: "flatlay.jpg",       caption: "Koleksi Tumbuddy" },
   { img: "charms-marble.jpg", caption: "Charm lonceng" },
-  { img: "studio-pair.jpg",   caption: "Sky Lemon & Pink Noir" },
+  { img: "studio-pair.jpg",   caption: "Candy Braid" },
 ];
 
 // ---------------- CONTACT & ORDER ----------------
@@ -176,12 +180,14 @@ const SHIPPING = [
 function tujuanKlik(slug) {
   const wa = (m) => `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(m)}`;
   if (slug === "instagram") return `https://instagram.com/${SITE.instagram}`;
+  if (slug === "youtube") return SITE.youtube;
+  if (slug === "tiktok") return SITE.tiktok;
   if (slug === "pesan-duo") return wa(FEATURED.waMessage);
   if (slug === "custom") return wa("Halo Tumbuddy_ID, aku mau request strap custom. Warna tali dan charm yang aku mau: ");
   if (slug === "ulasan") return wa("Halo Tumbuddy_ID, aku mau kasih ulasan untuk strap yang aku beli.");
   if (slug.indexOf("pesan-") === 0) {
     const p = PRODUCTS.find((x) => x.id === slug.slice(6));
-    if (p) return wa(`Halo Tumbuddy_ID, aku mau pesan ${p.name}. Masih ada stok?`);
+    if (p) return wa(`Halo Tumbuddy_ID, aku mau pesan ${p.name} (${p.variant}). Masih ada stok?`);
   }
   return wa(SITE.waGreeting);
 }

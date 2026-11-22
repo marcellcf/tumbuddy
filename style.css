@@ -526,3 +526,10 @@ body.ready:not(.intro-on) .hero__title .w > span { transform: none; transition-d
 @media (max-width: 900px) { .feature__media { height: 480px; } }
 @media (max-width: 640px) { .feature__media { height: 400px; } }
 @media (min-width: 901px) { .feature__img--small { width: 48%; height: 62%; right: -4%; bottom: 8%; rotate: 4deg; } }
+
+/* revisi: tombol kontak */
+.contact__buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 460px; }
+.contact__buttons .btn--wa { grid-column: 1 / -1; justify-content: center; }
+.contact__buttons .btn--outline { justify-content: center; padding: 12px 10px; font-size: 14.5px; gap: 8px; }
+.contact__buttons .btn--outline svg { width: 18px; height: 18px; }
+@media (max-width: 380px) { .contact__buttons .btn--outline span { font-size: 13px; } }

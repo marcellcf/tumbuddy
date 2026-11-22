@@ -45,7 +45,7 @@
     const list = PRODUCTS.filter((p) => current === "all" || p.type === current);
     grid.innerHTML = list.map((p, i) => `
       <article class="card" style="--i:${i}" data-id="${p.id}" tabindex="0" aria-label="${esc(p.name)}">
-        <div class="card__img"><img src="${p.img}" alt="${esc(p.name)}" loading="lazy"><span class="badge">${esc(typeLabel(p.type))}</span></div>
+        <div class="card__img"><img src="${p.img}" alt="${esc(p.name + " " + (p.variant || ""))}" loading="lazy"></div>
         <div class="card__body">
           <h3>${esc(p.name)}</h3>
           <div class="dots">${p.colors.map((c) => `<i style="background:${c}"></i>`).join("")}</div>
@@ -98,7 +98,7 @@
   function openModal(id) {
     const p = PRODUCTS.find((x) => x.id === id); if (!p) return;
     $("#modalImg").src = p.img; $("#modalImg").alt = p.name;
-    $("#modalType").textContent = typeLabel(p.type) + (p.ring !== "-" ? " · Ring " + p.ring : "");
+    $("#modalType").textContent = p.variant || typeLabel(p.type);
     $("#modalTitle").textContent = p.name;
     $("#modalPrice").textContent = rupiah(p.price);
     $("#modalDesc").textContent = p.desc;
@@ -183,7 +183,8 @@
   // ---------- kontak ----------
   $("#waBtn").href = linkKlik("wa-kontak");
   $("#igBtn").href = linkKlik("instagram");
-  $("#igText").textContent = "@" + SITE.instagram;
+  $("#ytBtn").href = linkKlik("youtube");
+  $("#ttBtn").href = linkKlik("tiktok");
   $("#orderSteps").innerHTML = ORDER_STEPS.map((s, i) => `<li><span class="steps__n">${i + 1}</span><div><strong>${esc(s.title)}</strong><p>${esc(s.text)}</p></div></li>`).join("");
   $("#shipping").innerHTML = SHIPPING.map((s) => `<li><span>${esc(s.label)}</span><strong>${todo(s.value)}</strong></li>`).join("");
   $("#year").textContent = new Date().getFullYear();

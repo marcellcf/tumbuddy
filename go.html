@@ -31,7 +31,8 @@
   <script>
     var slug = location.pathname.split("/").filter(Boolean).pop() || "";
     var dest = tujuanKlik(slug);
-    if (slug === "instagram") document.getElementById("msg").textContent = "Sebentar ya, sedang membuka Instagram";
+    var nama = { instagram: "Instagram", youtube: "YouTube", tiktok: "TikTok" }[slug];
+    if (nama) document.getElementById("msg").textContent = "Sebentar ya, sedang membuka " + nama;
     document.getElementById("go").href = dest;
     // jeda singkat supaya kunjungan sempat tercatat sebelum pindah
     setTimeout(function () { location.replace(dest); }, 700);
