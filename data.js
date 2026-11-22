@@ -142,12 +142,7 @@ const REVIEWS_NOTE = "*Ulasan di atas merupakan contoh untuk keperluan tugas.";
 
 // Foto produk dari pelanggan. Simpan fotonya di folder ini lalu tulis namanya. Contoh:
 // { img: "pelanggan-1.jpg", caption: "@namapembeli" },
-const CUSTOMER_PHOTOS = [
-  { img: "hero-pair.jpg",     caption: "Candy Braid" },
-  { img: "flatlay.jpg",       caption: "Koleksi Tumbuddy" },
-  { img: "charms-marble.jpg", caption: "Charm lonceng" },
-  { img: "studio-pair.jpg",   caption: "Candy Braid" },
-];
+const CUSTOMER_PHOTOS = []; // kosong = bagian "Foto dari pelanggan" disembunyikan
 
 // ---------------- CONTACT & ORDER ----------------
 const ORDER_STEPS = [
@@ -159,9 +154,9 @@ const ORDER_STEPS = [
 
 // Teks dalam [kurung siku] perlu diganti.
 const SHIPPING = [
-  { label: "Dikirim dari", value: "[Isi kota asal pengiriman]" },
-  { label: "Ekspedisi", value: "[Isi ekspedisi yang tersedia, misalnya JNE, J&T, SiCepat]" },
-  { label: "Waktu proses", value: "[Isi lama proses pesanan, misalnya 1–3 hari kerja]" },
+  { label: "Dikirim dari", value: "Jakarta Barat" },
+  { label: "Ekspedisi", value: "JNE, J&T, SiCepat" },
+  { label: "Waktu proses", value: "1–3 hari kerja" },
   { label: "Kemasan", value: "Setiap produk dikemas dalam pouch zip holografik." },
 ];
 

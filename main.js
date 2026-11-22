@@ -174,9 +174,7 @@
     ugc.innerHTML = `<h3>Foto dari pelanggan</h3><div class="ugc__grid">${CUSTOMER_PHOTOS.map((p) =>
       `<figure><img src="${p.img}" alt="Foto pelanggan ${esc(p.caption || "")}" loading="lazy"><figcaption>${esc(p.caption || "")}</figcaption></figure>`).join("")}</div>`;
   } else {
-    ugc.innerHTML = `<h3>Foto dari pelanggan</h3><div class="ugc__grid">${[1, 2, 3, 4].map(() =>
-      `<figure class="ugc__empty"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><figcaption>Fotomu di sini</figcaption></figure>`).join("")}</div>
-      <p class="ugc__note">Sudah punya strap Tumbuddy? Kirim fotomu lewat DM Instagram, siapa tahu tampil di sini.</p>`;
+    ugc.remove();
   }
 
   // ---------- kontak ----------
