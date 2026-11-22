@@ -119,7 +119,8 @@
   });
 
   // ---------- about ----------
-  $("#story").innerHTML = ABOUT.story.map((p) => `<p>${esc(p)}</p>`).join("");
+  $("#story").innerHTML = ABOUT.story.map((p) => `<p>${esc(p).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")}</p>`).join("");
+  if (ABOUT.title) $("#aboutTitle").innerHTML = esc(ABOUT.title).replace(/\*(.+?)\*/g, "<em>$1</em>");
   $("#vision").textContent = ABOUT.vision;
   $("#mission").innerHTML = ABOUT.mission.map((m) => `<li>${esc(m)}</li>`).join("");
 
@@ -134,11 +135,16 @@
       <blockquote>${esc(r.text)}</blockquote>
       <figcaption><strong>${esc(r.name)}</strong>${r.product ? ` · ${esc(r.product)}` : ""}</figcaption></figure>`).join("");
   } else {
-    $("#rating").innerHTML = `<div class="rating__num">–</div><div class="stars">${stars(0)}</div><p>Ulasan pembeli akan tampil di sini.</p>`;
-    $("#reviewList").innerHTML = [1, 2, 3].map(() => `
-      <figure class="review review--empty"><div class="stars stars--sm">${stars(0)}</div>
-      <blockquote><mark class="todo">[Testimoni pembeli]</mark></blockquote>
-      <figcaption><mark class="todo">[Nama pembeli · Model]</mark></figcaption></figure>`).join("");
+    $("#rating").innerHTML = `<div class="rating__num rating__num--new">Baru</div><div class="stars">${stars(0)}</div><p>Belum ada ulasan. Jadilah yang pertama!</p>`;
+    $("#reviewList").innerHTML = `
+      <div class="review review--invite">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5-8-11.2A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8 2.8C20 16 12 21 12 21z"/></svg>
+        <blockquote>Sudah pakai strap Tumbuddy_ID? Ceritakan pengalamanmu, ulasanmu akan kami tampilkan di sini.</blockquote>
+        <a class="btn btn--cream" href="${linkKlik("ulasan")}" target="_blank" rel="noopener">Kirim ulasan lewat WhatsApp</a>
+      </div>`;
+  }
+  if (REVIEWS.length && typeof REVIEWS_NOTE !== "undefined" && REVIEWS_NOTE) {
+    $("#reviewList").insertAdjacentHTML("afterend", `<p class="reviews__note">${esc(REVIEWS_NOTE)}</p>`);
   }
   const ugc = $("#ugc");
   if (CUSTOMER_PHOTOS.length) {
@@ -146,7 +152,7 @@
       `<figure><img src="${p.img}" alt="Foto pelanggan ${esc(p.caption || "")}" loading="lazy"><figcaption>${esc(p.caption || "")}</figcaption></figure>`).join("")}</div>`;
   } else {
     ugc.innerHTML = `<h3>Foto dari pelanggan</h3><div class="ugc__grid">${[1, 2, 3, 4].map(() =>
-      `<figure class="ugc__empty"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><figcaption>[Foto pelanggan]</figcaption></figure>`).join("")}</div>
+      `<figure class="ugc__empty"><svg viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><figcaption>Fotomu di sini</figcaption></figure>`).join("")}</div>
       <p class="ugc__note">Sudah punya strap Tumbuddy? Kirim fotomu lewat DM Instagram, siapa tahu tampil di sini.</p>`;
   }
 
