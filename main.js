@@ -114,7 +114,6 @@
 
   // ---------- detail produk ----------
   $("#specs").innerHTML = DETAILS.specs.map((s) => `<div class="spec"><dt>${esc(s.label)}</dt><dd>${todo(s.value)}</dd></div>`).join("");
-  $("#howto").innerHTML = DETAILS.howto.map((t) => `<li>${esc(t)}</li>`).join("");
   const ICONS = {
     hand: '<path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V12m0-6.5V4a1.5 1.5 0 0 1 3 0v8m0-6.5a1.5 1.5 0 0 1 3 0V12m0-4.5a1.5 1.5 0 0 1 3 0V15a7 7 0 0 1-7 7h-1a7 7 0 0 1-5.6-2.8L3.6 16a1.6 1.6 0 0 1 2.4-2.1L8 16"/>',
     shield: '<path d="M12 3l8 3v6c0 5-3.4 8.4-8 9.5C7.4 20.4 4 17 4 12V6z"/><path d="M9 12l2 2 4-4"/>',

@@ -533,3 +533,10 @@ body.ready:not(.intro-on) .hero__title .w > span { transform: none; transition-d
 .contact__buttons .btn--outline { justify-content: center; padding: 12px 10px; font-size: 14.5px; gap: 8px; }
 .contact__buttons .btn--outline svg { width: 18px; height: 18px; }
 @media (max-width: 380px) { .contact__buttons .btn--outline span { font-size: 13px; } }
+
+/* revisi: tinggi visi = tinggi misi */
+.about > .vm { grid-template-columns: 1fr 1.5fr; }
+.about > .vm .vm__card:first-child p { font-size: 19.5px; line-height: 1.6; }
+.about > .vm .vm__card:first-child h3 { margin-bottom: 12px; }
+.about > .vm ol li { font-size: 15px; }
+@media (max-width: 640px) { .about > .vm .vm__card:first-child p { font-size: 17px; } }
