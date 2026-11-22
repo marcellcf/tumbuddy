@@ -411,8 +411,8 @@ body.ready:not(.intro-on) .hero__title .w > span { transform: none; transition-d
 
 /* revisi: About lebih padat */
 .about { align-items: start; row-gap: 64px; }
-.about__photo { position: sticky; top: 110px; }
-.about__collage { position: relative; padding-bottom: 120px; }
+.about__photo { position: relative; top: auto; align-self: stretch; }
+.about__collage { position: sticky; top: 110px; padding-bottom: 120px; }
 .about__collage .photo-frame--arch { width: 88%; }
 .photo-frame--tilt { position: absolute; right: 0; bottom: 0; width: 52%; aspect-ratio: 4 / 5; border-radius: 22px; rotate: 5deg; box-shadow: var(--shadow); }
 .photo-frame--tilt img { border-radius: 14px; }
@@ -426,7 +426,8 @@ body.ready:not(.intro-on) .hero__title .w > span { transform: none; transition-d
 .about > .vm .vm__card p, .about > .vm .vm__card li { font-size: 16px; }
 .about > .vm ol { grid-template-columns: 1fr 1fr; column-gap: 34px; row-gap: 10px; }
 @media (max-width: 900px) {
-  .about__photo { position: relative; top: 0; }
+  .about__photo { align-self: start; }
+  .about__collage { position: relative; top: 0; }
   .about > .vm { grid-template-columns: 1fr; }
 }
 @media (max-width: 640px) {
