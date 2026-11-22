@@ -436,3 +436,34 @@ body.ready:not(.intro-on) .hero__title .w > span { transform: none; transition-d
   .about__badge text { font-size: 9px; }
   .about > .vm ol { grid-template-columns: 1fr; }
 }
+
+/* revisi: visi misi baru */
+.about > .vm { grid-template-columns: 1fr 1.75fr; gap: 22px; align-items: stretch; }
+.about > .vm .vm__card { position: relative; border-radius: 28px; padding: 38px 40px; overflow: hidden; }
+.about > .vm .vm__card h3 { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; font-family: var(--sans); font-weight: 700; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 18px; }
+.about > .vm .vm__card h3::before { content: "✦"; font-size: 12px; }
+/* kartu visi */
+.about > .vm .vm__card:first-child { background: var(--wine); color: var(--cream);
+  background-image: linear-gradient(90deg, rgba(255,255,255,.05) 50%, transparent 50%), linear-gradient(rgba(255,255,255,.05) 50%, transparent 50%);
+  background-size: 90px 90px; display: flex; flex-direction: column; justify-content: center; }
+.about > .vm .vm__card:first-child::after { content: "\201C"; position: absolute; right: 22px; top: -18px; font-family: var(--serif); font-size: 190px; line-height: 1; color: rgba(246,201,207,.14); }
+.about > .vm .vm__card:first-child h3 { color: #F6C9CF; }
+.about > .vm .vm__card:first-child p { position: relative; font-family: var(--serif); font-size: 22px; line-height: 1.5; color: var(--cream); font-weight: 500; }
+/* kartu misi */
+.about > .vm .vm__card:last-child { background: #fff; box-shadow: var(--shadow); }
+.about > .vm .vm__card:last-child::before { content: ""; position: absolute; inset: 10px; border: 1.5px dashed rgba(196,42,63,.28); border-radius: 20px; pointer-events: none; }
+.about > .vm .vm__card:last-child h3 { color: var(--cherry); }
+.about > .vm ol { list-style: none; padding: 0; margin: 0; counter-reset: misi; display: grid;
+  grid-template-rows: repeat(3, auto); grid-auto-flow: column; grid-template-columns: 1fr 1fr; column-gap: 32px; row-gap: 18px; }
+.about > .vm ol li { counter-increment: misi; display: grid; grid-template-columns: 42px 1fr; gap: 14px; align-items: start; font-size: 15.5px; line-height: 1.55; color: var(--ink); }
+.about > .vm ol li::before { content: counter(misi); width: 42px; height: 42px; border-radius: 50%; background: var(--blush); color: var(--wine);
+  display: grid; place-items: center; font-family: var(--serif); font-weight: 700; font-size: 19px; }
+.about > .vm ol li:nth-child(odd)::before { background: var(--cherry); color: #fff; }
+@media (max-width: 900px) {
+  .about > .vm { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .about > .vm .vm__card { padding: 30px 26px; }
+  .about > .vm .vm__card:first-child p { font-size: 19px; }
+  .about > .vm ol { grid-template-rows: none; grid-auto-flow: row; grid-template-columns: 1fr; }
+}
