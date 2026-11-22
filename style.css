@@ -525,4 +525,4 @@ body.ready:not(.intro-on) .hero__title .w > span { transform: none; transition-d
 .feature__media { height: 560px; }
 @media (max-width: 900px) { .feature__media { height: 480px; } }
 @media (max-width: 640px) { .feature__media { height: 400px; } }
-@media (min-width: 901px) { .feature__img--small { width: 36%; height: 50%; right: -3%; bottom: -90px; } }
+@media (min-width: 901px) { .feature__img--small { width: 48%; height: 62%; right: -4%; bottom: 8%; rotate: 4deg; } }
