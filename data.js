@@ -139,3 +139,25 @@ const SHIPPING = [
   { label: "Waktu proses", value: "[Isi lama proses pesanan, misalnya 1–3 hari kerja]" },
   { label: "Kemasan", value: "Setiap produk dikemas dalam pouch zip holografik." },
 ];
+
+
+// ================================================================
+//  PENGHITUNG KLIK (tidak perlu diubah)
+//  Setiap tombol keluar (WhatsApp, Instagram) lewat alamat /klik/...
+//  supaya jumlah kliknya tercatat di Vercel Analytics, lalu
+//  langsung diteruskan ke tujuannya.
+// ================================================================
+function tujuanKlik(slug) {
+  const wa = (m) => `https://wa.me/${SITE.whatsapp}?text=${encodeURIComponent(m)}`;
+  if (slug === "instagram") return `https://instagram.com/${SITE.instagram}`;
+  if (slug === "pesan-duo") return wa(FEATURED.waMessage);
+  if (slug.indexOf("pesan-") === 0) {
+    const p = PRODUCTS.find((x) => x.id === slug.slice(6));
+    if (p) return wa(`Halo Kak Jessica, aku mau pesan ${p.name} dari Tumbuddy_ID. Masih ada stok?`);
+  }
+  return wa(SITE.waGreeting);
+}
+function linkKlik(slug) {
+  // Saat dibuka langsung dari laptop (bukan dari Vercel), tombol langsung ke tujuan.
+  return location.protocol === "file:" ? tujuanKlik(slug) : "/klik/" + slug;
+}

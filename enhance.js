@@ -20,8 +20,8 @@
   $("#featTitle").textContent = FEATURED.title;
   $("#featDesc").textContent = FEATURED.desc;
   $("#featList").innerHTML = FEATURED.points.map((p) => `<li>${p.replace(/</g, "&lt;")}</li>`).join("");
-  $("#featBtn").href = wa(FEATURED.waMessage);
-  $("#waFloat").href = wa(SITE.waGreeting);
+  $("#featBtn").href = linkKlik("pesan-duo");
+  $("#waFloat").href = linkKlik("wa-melayang");
 
   // ---------- judul muncul per kata ----------
   function split(el) {

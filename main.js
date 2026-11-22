@@ -79,7 +79,7 @@
     $("#modalPrice").textContent = rupiah(p.price);
     $("#modalDesc").textContent = p.desc;
     $("#modalDots").innerHTML = p.colors.map((c) => `<i style="background:${c}"></i>`).join("");
-    $("#modalOrder").href = wa(`Halo Kak Jessica, aku mau pesan ${p.name} dari Tumbuddy_ID. Masih ada stok?`);
+    $("#modalOrder").href = linkKlik("pesan-" + p.id);
     modal.classList.add("modal--open"); modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
     $(".modal__close").focus();
@@ -151,8 +151,8 @@
   }
 
   // ---------- kontak ----------
-  $("#waBtn").href = wa(SITE.waGreeting);
-  $("#igBtn").href = `https://instagram.com/${SITE.instagram}`;
+  $("#waBtn").href = linkKlik("wa-kontak");
+  $("#igBtn").href = linkKlik("instagram");
   $("#igText").textContent = "@" + SITE.instagram;
   $("#orderSteps").innerHTML = ORDER_STEPS.map((s, i) => `<li><span class="steps__n">${i + 1}</span><div><strong>${esc(s.title)}</strong><p>${esc(s.text)}</p></div></li>`).join("");
   $("#shipping").innerHTML = SHIPPING.map((s) => `<li><span>${esc(s.label)}</span><strong>${todo(s.value)}</strong></li>`).join("");
